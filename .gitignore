@@ -1,0 +1,13 @@
+#ignore maven generated files
+/target
+
+#ignore paper folder
+/paper
+
+#ignore any generated files from noob programmers
+${spigotServer.directory}
+
+#ignore files that may contain user specific data
+/.vscode/tasks.json
+commands.txt
+token.txt
