@@ -116,7 +116,9 @@ Alternatively, you can add the Maven bin directory to the system `Path` variable
 
 ### Release Notes Setup
 
-We want to create a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) to allow the creation of release notes. Store the token in a token.txt file and ensure that it will NOT be pushed to your branch before committing.
+We want to create a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with a scope of at least `repo`
+
+- Store the token in a token.txt file and ensure that it will NOT be pushed to your branch before committing.
 
 You can update `.vscode/tasks.json` to create a task to create the release notes
 
@@ -197,7 +199,7 @@ git switch -c feature/add-a-cool-button
 Make and commit all the changes needed for the new feature.
 
 ```
-git commit <...>
+git commit -m <...>
 ```
 
 Push changes up to the remote.

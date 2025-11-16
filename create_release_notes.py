@@ -38,6 +38,8 @@ def get_github_tags(owner, repo, token):
         tags = [tag['name'] for tag in response.json()]
         return tags
     else:
+        print(api_url)
+        print(headers)
         print(f"Failed to retrieve tags: {response.status_code}")
         print("Exiting release note script")
         return []
@@ -77,9 +79,9 @@ def mark_tag_for_release(token, owner, repo_name, tag_name, release_notes):
         tag_name,
         f"{tag_name}",
         release_notes,
-        target_commitish=latest_commit_sha,
         draft=False,  # Change to True if you want to create a draft release
-        prerelease=prerelease
+        prerelease=prerelease,
+        target_commitish=latest_commit_sha
     )
 
     return release
@@ -111,7 +113,7 @@ def main():
     features_added = []
     if minor == 'y':
         print("What kits/features were added or removed? ")
-        print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.\n")
+        print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.")
         while True:
             feature_added = input()
             if feature_added.strip() == '':
@@ -119,7 +121,7 @@ def main():
             features_added.append(feature_added)
 
     print("What balance changes were made? ")
-    print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.\n")
+    print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.")
     changes = []
     while True:
         change = input()
@@ -128,7 +130,7 @@ def main():
         changes.append(change)
 
     print("What bugs were fixed/QOL were made? ")
-    print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.\n")
+    print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.")
     bugs = []
     while True:
         bug = input()
@@ -137,7 +139,7 @@ def main():
         bugs.append(bug)
 
     print("Any other notes?")
-    print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.\n")
+    print("Press enter to add a new change. If you press enter on an empty line, you move onto the next step.")
     notes = []
     while True:
         note = input()
