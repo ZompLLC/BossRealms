@@ -1,7 +1,7 @@
 name: BossRealms
 version: 0.0.0
 main: bossrealms.plugin.Plugin
-description:
+description: BossRealms is a minigame where you fight a boss... in a realm...
 authors: [ZompLLC]
 website: https://github.com/ZompLLC/BossRealms
 api-version: "1.21.10"
@@ -12,5 +12,3 @@ commands:
     description: "Enable/Disable hot reload of the plugin (Useful for development)"
     usage: "/autoreload"
     aliases: [autoreload]
-    permission: op
-    permission-message: "You seem to be a stinky poopoo head"
