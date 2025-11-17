@@ -6,8 +6,8 @@
    - [Downloads](#downloads)
    - [VS Code Extensions](#vs-code-extensions)
    - [Maven Setup](#maven-setup)
-   - [Release Notes Setup](#release-notes-setup)
    - [Server Properties](#server-properties)
+   - [Release Notes Setup](#release-notes-setup)
 2. [Development](#development)
    - [Compiling the Plugin](#compiling-the-plugin)
    - [Running the Server](#running-the-server)
@@ -114,6 +114,17 @@ Alternatively, you can add the Maven bin directory to the system `Path` variable
 
 - To verify this, open a new terminal and try `mvn --version`.
 
+### Server Properties
+
+There are some server properties you will want to set to enable smoother gameplay. These files can be found in the paper folder.
+
+#### server.properties
+
+`allow-flight=true` => Some kits will stun you, and lead to a pseudo-flying state, which the server will kick you out from.  
+`require-resource-pack=true` => Force players to use the server resource pack in the future
+`resource-pack-prompt="We may require a texture pack for optimal gameplay."` => Show prompt for enabling resource pack  
+`resource-pack="link-to-direct-download-resource-pack.com"` => Resource pack direct download, usually a dropbox link
+
 ### Release Notes Setup
 
 We want to create a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with a scope of at least `repo`
@@ -147,17 +158,6 @@ You can update `.vscode/tasks.json` to create a task to create the release notes
 }
 ```
 
-### Server Properties
-
-There are some server properties you will want to set to enable smoother gameplay. These files can be found in the paper folder.
-
-#### server.properties
-
-`allow-flight=true` => Some kits will stun you, and lead to a pseudo-flying state, which the server will kick you out from.  
-`require-resource-pack=true` => Force players to use the server resource pack in the future
-`resource-pack-prompt="We may require a texture pack for optimal gameplay."` => Show prompt for enabling resource pack  
-`resource-pack="link-to-direct-download-resource-pack.com"` => Resource pack direct download, usually a dropbox link
-
 ## Development
 
 ### Compiling the plugin
@@ -167,6 +167,7 @@ The extension should now automatically detect the project and display an entry i
 Click `package` to generate the target folder with the .jar file.
 
 - You may skip this step if you have _mvn-package-auto_ installed.
+- Note that you need the compiled jar file to be in the `paper/plugins` folder, which should be automatic due to the `pom.xml` file.
 
 ### Running the server
 
