@@ -50,6 +50,7 @@ public class Plugin extends JavaPlugin {
                             Bukkit.getServer().getConsoleSender(), "paper reload"); // sub with utils later;
                                                                                     // https://www.spigotmc.org/resources/plugmanx.88135/
                                                                                     // for open source plugin manager?
+                    //hard coded edit to addd this: https://www.spigotmc.org/resources/plugmanx.88135/
                 }
             }
         }.runTaskTimer(this, 0, 20); // every 20 ticks (1 second), do it
