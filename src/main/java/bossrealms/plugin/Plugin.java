@@ -50,9 +50,21 @@ public class Plugin extends JavaPlugin {
                             Bukkit.getServer().getConsoleSender(), "paper reload"); // sub with utils later;
                                                                                     // https://www.spigotmc.org/resources/plugmanx.88135/
                                                                                     // for open source plugin manager?
-                    //hard coded edit to addd this: https://www.spigotmc.org/resources/biletools-test-plugins-faster.54823/
+                    // hard coded edit to addd this:
+                    // https://www.spigotmc.org/resources/biletools-test-plugins-faster.54823/
                 }
             }
         }.runTaskTimer(this, 0, 20); // every 20 ticks (1 second), do it
+
+        try {
+
+            org.bukkit.plugin.Plugin bossRealmsPlugin = getServer().getPluginManager()
+                    .loadPlugin(
+                            new File("/Users/keith/Development/the boss realms/paper/plugins/zomp-1.0-SNAPSHOT.jar"));
+            getServer().getPluginManager().enablePlugin(bossRealmsPlugin);
+        } catch (Exception e) {
+            System.out.println("RATRATARTARRTARTARTARTRA");
+            e.printStackTrace();
+        }
     }
 }
