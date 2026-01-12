@@ -6,9 +6,3 @@ authors: [ZompLLC]
 website: https://github.com/ZompLLC/BossRealms
 api-version: "1.21.10"
 prefix: BossRealmsPlugin
-
-commands:
-  autoreload:
-    description: "Enable/Disable hot reload of the plugin (Useful for development)"
-    usage: "/autoreload"
-    aliases: [autoreload]

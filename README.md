@@ -58,21 +58,21 @@ Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
 ...
 ```
 
-5. Download the [Paper Jar](https://papermc.io/downloads/paper)).
+5. Download [BuildTools](https://www.spigotmc.org/wiki/buildtools/) to get the server jar file. This may take a while
 
-   - Create a folder `/paper` inside the project and move the file here.
+   - Create a folder `/spigot` inside the project and move the jar file here.
      - On VSCode, you can create a `.vscode/tasks.json` to create a task to run the server
        #### .vscode/tasks.json
        ```json
        {
-         "version": "1.0.0",
+         "version": "2.0.0",
          "tasks": [
            {
-             "label": "Run Paper Server",
+             "label": "Run Spigot Server",
              "type": "shell",
-             "command": "cd '__absolute\\path\\to\\paper'; java -jar .\\paper-1.21.10-113.jar --nogui",
+             "command": "cd '__absolute\\path\\to\\spigot'; java -jar .\\spigot-1.21.11.jar --nogui",
              "windows": {
-               "command": "cd '__absolute\\path\\to\\paper'; java -jar .\\paper-1.21.10-113.jar --nogui"
+               "command": "cd '__absolute\\path\\to\\spigot'; java -jar .\\spigot-1.21.11.jar --nogui"
              },
              "group": "test",
              "presentation": {
@@ -83,10 +83,10 @@ Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
          ]
        }
        ```
-   - Run the jar twice. The first run will generate several folders such as cache, libraries, and versions. The second time you run the jar, it will generate a `eula.txt`. Open this file and set `eula=TRUE`.
-   - Run the jar a third time to generate the remainder of the server files. It should look similar to this:
+   - Run the jar once. This should generate a `eula.txt`. Open this file and set `eula=TRUE`.
+   - Run the jar again to generate the appropriate files. It should look similar to this:
 
-     <img src="images/paper-folder.png" width="300px"/>
+     <img src="images/spigot-folder.png" width="300px"/>
 
 ### VS Code Extensions
 
@@ -116,12 +116,12 @@ Alternatively, you can add the Maven bin directory to the system `Path` variable
 
 ### Server Properties
 
-There are some server properties you will want to set to enable smoother gameplay. These files can be found in the paper folder.
+There are some server properties you will want to set to enable smoother gameplay. These files can be found in the spigot folder.
 
 #### server.properties
 
-`allow-flight=true` => Some kits will stun you, and lead to a pseudo-flying state, which the server will kick you out from.  
-`require-resource-pack=true` => Force players to use the server resource pack in the future
+`allow-flight=true` => Some kits will stun you, and lead to a pseudo-flying state, which the server will kick you out from  
+`require-resource-pack=true` => Force players to use the server resource pack in the future  
 `resource-pack-prompt="We may require a texture pack for optimal gameplay."` => Show prompt for enabling resource pack  
 `resource-pack="link-to-direct-download-resource-pack.com"` => Resource pack direct download, usually a dropbox link
 
@@ -167,13 +167,13 @@ The extension should now automatically detect the project and display an entry i
 Click `package` to generate the target folder with the .jar file.
 
 - You may skip this step if you have _mvn-package-auto_ installed.
-- Note that you need the compiled jar file to be in the `paper/plugins` folder, which should be automatic due to the `pom.xml` file.
+- Note that you need the compiled jar file to be in the `spigot/plugins` folder, which should be automatic due to the `pom.xml` file.
 
 ### Running the server
 
-From the `/paper` folder, run the command `java -jar .\paper-1.21.10-113.jar -nogui`.
+From the `/spigot` folder, run the command `java -jar .\spigot-1.21.11.jar -nogui`.
 
-- Alternatively, on VSCode, you can run task `Run Paper Server` to start the server instead. You can use the Command Palette to open `Tasks: Run Task`
+- Alternatively, on VSCode, you can run task `Run Spigot Server` to start the server instead. You can use the Command Palette to open `Tasks: Run Task`
   - Command Palette Hotkey:
     - Windows: `Ctrl+Shift+P`
     - Mac: `Shift+Command+P`
@@ -200,6 +200,7 @@ git switch -c feature/add-a-cool-button
 Make and commit all the changes needed for the new feature.
 
 ```
+git add <...>
 git commit -m <...>
 ```
 
